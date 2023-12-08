@@ -1,36 +1,36 @@
-const chatMessages = document.getElementById('chatMessages');
-const userInput = document.getElementById('userInput');
-let tab = [
+const x = document.getElementById('chatMessages');
+const y = document.getElementById('userInput');
+let t = [
     {"role": "system", "content": "Tu es un assistant et tu dois noter chaque action sur 20 celon leurs influenses positive sur le climat en expliquant pourquoi aide-t-elle ou pas le climat en faisant moins de 20 mots. Si un utilisateur ne parle pas du climat ou d'une manière dont la quel il influe le climat quelconque alors tu lui dit qu'il doit parler seulement de l'impact du climat à cause de nos actes."},
 ]
 
 function sendMessage() {
-    const userMessage = userInput.value;
+    const um = y.value;
 
-    if (userMessage.trim() === '') {
+    if (um.trim() === '') {
         return;
     }
 
-    appendMessage('user', userMessage);
+    appendMessage('user', um);
     fetch("/chat", {
-        body: JSON.stringify(tab),
+        body: JSON.stringify(t),
         method: "POST",
         headers:{
             "Content-Type":'application/json'
         }
     })
         .then((response) => response.text())
-        .then((resultat) => appendMessage('assistant', resultat)) 
+        .then((r) => appendMessage('assistant', r))
 
-    userInput.value = '';
+    y.value = '';
 }
 
-function appendMessage(sender, message) {
-    tab.push({"role": sender, "content": message})
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('message', sender);
-    messageElement.innerText = message;
-    chatMessages.appendChild(messageElement);
+function appendMessage(s, m) {
+    t.push({"role": s, "content": m})
+    const me = document.createElement('div');
+    me.classList.add('message', s);
+    me.innerText = m;
+    x.appendChild(me);
 
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+    x.scrollTop = x.scrollHeight;
 }

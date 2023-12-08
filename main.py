@@ -1,8 +1,6 @@
 from flask import Flask, request, jsonify
 from openai import OpenAI
 
-from flask import Flask
-
 client = OpenAI(api_key="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")
 app = Flask(__name__,
             static_url_path='', 
