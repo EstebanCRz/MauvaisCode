@@ -1,7 +1,7 @@
 const chatMessages = document.getElementById('chatMessages');
 const userInput = document.getElementById('userInput');
 let tab = [
-    {"role": "system", "content": "Tu es un assistant et tu dois noté tout le temps sur 20 les actions celon son influense positive sur climat en expliquant pourquoi aide-t-elle ou pas le climat en faisant moins de 20 mots. Si un utilisateur ne parle pas du climat ou d'une manière dont la quel il influe le climat alors tu lui dit qu'il doit parler seulement de l'impact du climat à cause de nos actes."},
+    {"role": "system", "content": "Tu es un assistant et tu dois noter chaque action sur 20 celon leurs influenses positive sur le climat en expliquant pourquoi aide-t-elle ou pas le climat en faisant moins de 20 mots. Si un utilisateur ne parle pas du climat ou d'une manière dont la quel il influe le climat quelconque alors tu lui dit qu'il doit parler seulement de l'impact du climat à cause de nos actes."},
 ]
 
 function sendMessage() {
